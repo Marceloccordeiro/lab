@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Gerador de Referências</title>
+</head>
+
+<body>
+    <header>
+        <h1>Gerador de Referências Bibliográficas</h1>
+        <button type="button" form="FormularioLivro" onclick="mostrarFormulario()">LIVROS</button>
+        <button type="button" form="FormularioFilmes" onclick="mostrarFormulario1()">FILMES</button>
+        <button type="button" form="FormularioSite" onclick="mostrarFormulario2()">SITE</button>
+        <button type="button" form="FormularioArtigo" onclick="mostrarFormulario3()">ARTIGO REVISTAS/JORNAIS</button>
+        <button type="button" form="FormularioLeis" onclick="mostrarFormulario4()">LEGISLAÇÃO</button>
+    </header>
+    <main>
+        <form id="FormularioLivro">
+            <label for="autornome">Autor Nome:</label>
+            <input type="text" id="autornome" required>
+
+            <label for="autorsobrenome">Autor Sobrenome:</label>
+            <input type="text" id="autorsobrenome" required>
+
+            <label for="titulolivro">Titulo do Livro:</label>
+            <input type="text" id="titulolivro" required>
+
+            <label for="edicao">Edição:</label>
+            <input type="text" id="edicao" required>
+
+            <label for="cidadepublicacao">Cidade da Publicação:</label>
+            <input type="text" id="cidadepublicacao" required>
+
+            <label for="editora">Editora:</label>
+            <input type="text" id="editora" required>
+
+            <label for="anopublicacao">Ano da Publicação:</label>
+            <input type="text" id="anopublicacao" required>
+
+            <button type="button" onclick="generateReference()">Gerar Referência</button>
+
+            <div id="output"></div>
+        </form>
+
+        <form id="FormularioFilmes">
+            <label for="nomefilme">Titulo:</label>
+            <input type="text" id="nomefilme" required>
+
+            <label for="produtorfilme">Produtor:</label>
+            <input type="text" id="produtorfilme" required>
+
+            <label for="datapublicfilme">Data da Publicação:</label>
+            <input type="text" id="datapublicfilme" required>
+
+            <label for="localpublicfilme">Local da Publicação:</label>
+            <input type="text" id="localpublicfilme" required>
+
+            <label for="empresaprodfilme">Empresa Produtora do Filme:</label>
+            <input type="text" id="empresaprodfilme" required>
+
+            <button type="button" onclick="generateReference1()">Gerar Referência</button>
+
+            <div id="output1"></div>
+        </form>
+
+        <form id="FormularioSite">
+            <label for="autornome1">Autor Primeiro Nome:</label>
+            <input type="text" id="autornome1" required>
+
+            <label for="autorsobrenome1">Autor Ultimo Nome:</label>
+            <input type="text" id="autorsobrenome1" required>
+
+
+            <label for="titulosite">Titulo:</label>
+            <input type="text" id="titulosite" required>
+
+            <label for="subtitulosite">Subtitulo:</label>
+            <input type="text" id="subtitulosite" required>
+
+            <label for="datapublicsite">Data da Publicação:</label>
+            <input type="text" id="datapublicsite" required>
+
+            <label for="linksite">Disponível em:</label>
+            <input type="text" id="linksite" required>
+
+            <label for="acessosite">Acesso em:</label>
+            <input type="text" id="acessosite" required>
+
+            <button type="button" onclick="generateReference2()">Gerar Referência</button>
+
+            <div id="output2"></div>
+        </form>
+
+        <form id="FormularioArtigo">
+
+            <label for="autornome2">Autor Primeiro Nome:</label>
+            <input type="text" id="autornome2" required>
+
+            <label for="autorsobrenome2">Autor Ultimo Nome:</label>
+            <input type="text" id="autorsobrenome2" required>
+
+            <label for="tituloartigo">Titulo do Artigo:</label>
+            <input type="text" id="tituloartigo" required>
+
+            <label for="titulojornal">Titulo do Jornal</label>
+            <input type="text" id="titulojornal" required>
+
+            <label for="datapublicartigo">Data da Publicação:</label>
+            <input type="text" id="datapublicartigo" required>
+
+            <label for="localpublicartigo">Local da Publicação:</label>
+            <input type="text" id="localpublicartigo" required>
+
+            <label for="numedicaoartigo">Numero de Edição:</label>
+            <input type="text" id="numedicaoartigo" required>
+
+            <label for="num_ano_artigo">Numeração do Ano:</label>
+            <input type="text" id="num_ano_artigo" required>
+
+            <label for="parteartigo">Seção, Caderno ou Parte do Jornal:</label>
+            <input type="text" id="parteartigo" required>
+
+            <label for="pag_artigo">Pagina Inicial-Final:</label>
+            <input type="text" id="pag_artigo" required>
+
+            <button type="button" onclick="generateReference3()">Gerar Referência</button>
+
+            <div id="output3"></div>
+        </form>
+
+        <form id="FormularioLeis">
+
+            <label for="jurisdicao">Jurisdição:</label>
+            <input type="text" id="jurisdicao" required>
+
+
+            <label for="tipo_lei_decreto">Tipo (Lei, Decreto):</label>
+            <input type="text" id="tipo_lei_decreto" required>
+
+            <label for="epigrafe_ementa">Epigrafe e Ementa:</label>
+            <input type="text" id="epigrafe_ementa" required>
+
+            <label for="numero_lei">Numero da Lei, Decreto:</label>
+            <input type="text" id="numero_lei" required>
+
+            <label for="data_lei">Data:</label>
+            <input type="text" id="data_lei" required>
+
+            <label for="titulo_lei">Titulo:</label>
+            <input type="text" id="titulo_lei" required>
+
+            <label for="subtitulo_lei">SubTitulo:</label>
+            <input type="text" id="subtitulo_lei" required>
+
+            <label for="datapubliclei">Data da Publicação:</label>
+            <input type="text" id="datapubliclei" required>
+
+            <label for="localpubliclei">Local da Publicação:</label>
+            <input type="text" id="localpubliclei" required>
+
+            <label for="num_ano_lei">Numeração do Ano:</label>
+            <input type="text" id="num_ano_lei" required>
+
+            <label for="numero_lei_1">Numero:</label>
+            <input type="text" id="numero_lei_1" required>
+
+            <label for="pag_lei">Pagina Inicial-Final:</label>
+            <input type="text" id="pag_lei" required>
+
+            <button type="button" onclick="generateReference4()">Gerar Referência</button>
+
+            <div id="output4"></div>
+        </form>
+
+        
+    </main>
+
+    
+</body>
+
+</html>
